@@ -2,7 +2,12 @@
 
 <suite name="ComponentsTestSuite">
 
-    <parameter name="runEnv" value="sauce"></parameter>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <parameter name="runEnv" value="local"></parameter>
     <parameter name="travis" value="on"></parameter>
 
     <!-- For Desktop -->

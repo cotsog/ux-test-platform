@@ -28,6 +28,17 @@
             <artifactId>java-client</artifactId>
             <version>3.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.1.4</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -40,6 +51,12 @@
                     <suiteXmlFiles> 
                         <suiteXmlFile>testng.xml</suiteXmlFile> 
                     </suiteXmlFiles>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
